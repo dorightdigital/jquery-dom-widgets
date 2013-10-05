@@ -66,4 +66,8 @@ describe('Basic DOM Widget Example', function () {
     expectWidgetToHaveBeenAppliedToElement('parent', parent);
     expectWidgetToHaveBeenAppliedToElement('child', child);
   });
+  it('return itself (to allow chaining)', function () {
+    var elem = $('<div/>');
+    expect(elem.loadDomWidgets()).toBe(elem);
+  });
 });
