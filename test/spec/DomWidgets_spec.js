@@ -4,13 +4,18 @@ describe('Basic DOM Widget Example', function () {
   var widgetsByName;
   beforeEach(function () {
     widgetsByName = {};
+    waitsFor(function () {
+      return window.$ && $.fn.loadDomWidgets !== undefined;
+    });
   });
   function createSpyWidget(name) {
     widgetsByName[name] = $.fn[name] = jasmine.createSpy(name);
   }
+
   function lookupSpyWidget(name) {
     return widgetsByName[name];
   }
+
   it('should load widget defined on root element', function () {
     createSpyWidget('myWidget');
     $('<div data-dom-widget="myWidget"/>').loadDomWidgets();
