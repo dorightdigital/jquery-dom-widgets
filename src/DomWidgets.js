@@ -21,9 +21,7 @@ define(['jquery'], function ($) {
       }
       $.each(attr.split(' '), function () {
         var widgetName = ("" + this).replace(/\./g, '/');
-        console.log(widgetName);
         require([widgetName], function (widget) {
-          console.log(widget);
           widget.init($target);
         });
       });
