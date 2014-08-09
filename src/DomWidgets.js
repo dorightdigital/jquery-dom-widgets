@@ -1,10 +1,10 @@
 require.config({
   paths: {
-    "jquery": "/lib/jquery"
+    "jquery": "/bower_components/jquery/dist/jquery"
   },
-  baseUrl: './domWidgets'
+  baseUrl: '/src/domWidgets'
 });
-define(['jquery'], function($) {
+define(['jquery'], function ($) {
 
   $.fn.loadDomWidgets = function () {
     return this.each(function () {
@@ -34,3 +34,16 @@ define(['jquery'], function($) {
   });
   return {};
 });
+
+function defineWidget(depsOrInit, init) {
+  var f = function () {
+    return {
+      init: init || depsOrInit
+    };
+  };
+  if (init) {
+    define(deps, f);
+  } else {
+    define(f);
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "DomWidgets",
+  "version": "0.0.0",
+  "homepage": "http://dorightdigital.com/principles/dom-widget-pattern-ui-widgets-made-easy",
+  "authors": [
+    "Mat Carey <mat@dorightdigital.com>"
+  ],
+  "main": "src/DomWidgets.js",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

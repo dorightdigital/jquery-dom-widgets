@@ -1,0 +1,23 @@
+{
+  "name": "DomWidgets",
+  "version": "0.0.0",
+  "description": "",
+  "main": "GruntFile.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://dorightdigital.com/principles/dom-widget-pattern-ui-widgets-made-easy"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-http-server": "0.0.5",
+    "grunt-cli": "~0.1.13"
+  }
+}
