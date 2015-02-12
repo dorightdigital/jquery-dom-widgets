@@ -1,0 +1,16 @@
+{
+  "name": "jquery-dom-widgets",
+  "version": "1.0.0",
+  "homepage": "https://github.com/dorightdigital/dom-widgets",
+  "authors": [
+    "Mat Carey <mat@dorightdigital.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
