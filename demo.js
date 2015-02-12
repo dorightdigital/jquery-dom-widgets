@@ -5,8 +5,8 @@ $.addDomWidget('confirmBeforeExit', function ($elem) {
     }
   });
 });
-$.addDomWidget('blink', function ($elem) {
-  var delay = parseInt($elem.attr('data-delay') || 1000, 10);
+$.addDomWidget('blink', function ($elem, data) {
+  var delay = parseInt(data.delay || '1000', 10);
   setInterval(function () {
     $elem.css('visibility', $elem.css('visibility') === 'hidden' ? 'visible' : 'hidden');
   }, delay);

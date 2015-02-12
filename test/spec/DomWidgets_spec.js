@@ -91,6 +91,18 @@ describe('Basic DOM Widget Example', function () {
     expectWidgetToHaveBeenCalledWithElement('a', $container.find('div:eq(0)'));
     expectWidgetToHaveBeenCalledWithElement('b', $container.find('div:eq(1)'));
   });
+  it('should pass through data from the element', function () {
+    createSpyWidget('myWidget');
+    $('<div/>')
+      .attr('data-dom-widget', 'myWidget')
+      .attr('data-a', 'b')
+      .attr('data-my-param', 'set to a value')
+      .loadDomWidgets();
+    expect(lookupSpyWidget('myWidget')).toHaveBeenCalledWith(jasmine.any(jQuery), {
+      a: 'b',
+      myParam: 'set to a value'
+    });
+  });
   it('return itself (to allow chaining)', function () {
     var elem = $('<div/>');
     expect(elem.loadDomWidgets()).toBe(elem);

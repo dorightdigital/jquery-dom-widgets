@@ -4,6 +4,7 @@ function jqueryDomWidgetManager() {
   'use strict';
   var widgetContainer = {},
     attrName = 'data-dom-widget',
+    attrPrettyName = 'domWidget',
     warn = function () {
       if (console && console.warn) {
         console.warn.apply(console, arguments);
@@ -16,9 +17,11 @@ function jqueryDomWidgetManager() {
         attrValue = $elem.attr(attrName);
       if (attrValue) {
         jQuery.each(attrValue.split(' '), function () {
-          var name = String(this);
+          var name = String(this), data;
           if (widgetContainer.hasOwnProperty(name)) {
-            widgetContainer[name]($elem);
+            data = $elem.data();
+            delete data[attrPrettyName];
+            widgetContainer[name]($elem, data);
           } else {
             warn('no plugin found nonExistentPlugin');
           }
